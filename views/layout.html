@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sticky Footer Navbar Template for Bootstrap</title>
+    <title>Jannine and Swyx awesome twitter.sql</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
@@ -44,6 +44,14 @@
               <li class="active"><a href="/">Home</a></li>
               <li><a href="#about">@ Connect</a></li>
               <li><a href="#contact"># Discover</a></li>
+              <li>
+                  <div class="nav navbar-light bg-faded">
+                    <form class="navbar-form form-inline">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Search" style="display:inline">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                  </div>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li class="dropdown">
@@ -92,7 +100,9 @@
       // When 'new_tweet' events are fired, do something with the packaged tweet
       socket.on('new_tweet', function (tweet) {
         console.log(tweet);
-        $tweets.append('<div class="tweetbox"><img><div class="content"><p class="by"><a href="/users/' + tweet.name + '">' + tweet.name + '</a></p><p><a href="/tweets/' + tweet.id + '">' + tweet.content + '</a></p></div></div>');
+        $tweets.prepend('<div class="tweetbox"><img><div class="content"><p class="by"><a href="/users/' 
+          + tweet.name + '">' + tweet.name + '</a></p><p><a href="/tweets/' + tweet.id + '">' 
+            + tweet.content + '</a></p></div></div>');
       });
     </script>
   </body>
